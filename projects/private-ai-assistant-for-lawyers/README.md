@@ -22,7 +22,7 @@
 MVP готов, ищу первых клиентов.
 
 ## Скриншоты
-projects/private-ai-assistant-for-lawyers/Главная.png
+![Главный экран](Главная.png)
 
 ## Ссылки
 - [Основной репозиторий](https://github.com/glorybet42-cmyk/portfolio) (если код здесь)
