@@ -38,4 +38,3 @@ Agent that parses vacancies, filters them via LLM, and sends results to Telegram
 - **Email:** glorybet423@gmail.com
 - **Telegram:** @alexof216
 - **LinkedIn:** [linkedin.com/in/александр-соколов-13b769428](https://www.linkedin.com/in/александр-соколов-13b769428)
-- **GitHub:** [github.com/glorybet42-cmyk](https://github.com/glorybet42-cmyk)
