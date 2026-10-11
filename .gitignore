@@ -1,6 +1,36 @@
-.env
-.env.*
+﻿# Python
 __pycache__/
-*.pyc
-.idea/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Секреты и данные
+.env
+*.db
+*.sqlite
+*.sqlite3
+user_documents/
+index_status.json
+backups/
+backup_*/
+
+# Логи и временные
 *.log
+nohup.out
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Кеш моделей
+.cache/
+.cache_huggingface/
+models/
+
+# Docker
+docker-compose.override.yml
