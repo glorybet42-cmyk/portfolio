@@ -49,17 +49,18 @@
 
 ---
 
+markdown
 ## 🏗 Архитектура
 
 ```mermaid
 flowchart TD
-    U[Пользователь<br/>ai.ceny24.by | admin.ceny24.by]
-    N[Nginx<br/>HTTPS 443 → 127.0.0.1:8501]
-    S[Streamlit UI + RAG-логика<br/>app.py · auth.py · ingest.py · ocr.py]
-    E[BGE-M3<br/>эмбеддинги]
-    R[BGE-reranker-v2-m3<br/>реранкинг топ-20 → топ-5]
-    O[Ollama<br/>qwen2.5:14b]
-    Q[(Qdrant<br/>legal_docs + file_hashes)]
+    U[Пользователь]
+    N[Nginx - HTTPS reverse proxy]
+    S[Streamlit - UI и RAG-логика]
+    E[BGE-M3 - эмбеддинги]
+    R[BGE-reranker-v2-m3 - реранкинг]
+    O[Ollama - qwen2.5:14b]
+    Q[(Qdrant - vector DB)]
 
     U --> N
     N --> S
@@ -71,17 +72,12 @@ flowchart TD
 
 RAG-пайплайн:
 
-Индексация: загрузка файла → извлечение текста (pypdf/python-docx/Tesseract OCR) → чанкинг (1500 символов) → извлечение номеров статей → векторизация BGE-M3 → загрузка в Qdrant
+Индексация: загрузка файла → извлечение текста → чанкинг → извлечение номеров статей → векторизация BGE-M3 → загрузка в Qdrant
 
-Поиск: векторизация вопроса → ARTICLE-FILTER (если «статья N») → топ-20 кандидатов → реранкинг BGE-reranker-v2-m3 → топ-5 → генерация qwen2.5:14b → постпроверка
+Поиск: векторизация вопроса → ARTICLE-FILTER → топ-20 кандидатов → реранкинг → топ-5 → генерация qwen2.5:14b → постпроверка
 
 Подробнее: docs/architecture.md
 
-**RAG-пайплайн:**
-
-1. **Индексация:** загрузка файла → извлечение текста (pypdf/python-docx/Tesseract OCR) → чанкинг (1500 символов) → извлечение номеров статей → векторизация BGE-M3 → загрузка в Qdrant
-2. **Поиск:** векторизация вопроса → ARTICLE-FILTER (если «статья N») → топ-20 кандидатов → реранкинг BGE-reranker-v2-m3 → топ-5 → генерация qwen2.5:14b → постпроверка. 
-**Подробнее:** [docs/architecture.md](docs/architecture.md)
 ---
 
 ## 📸 Скриншоты
