@@ -96,15 +96,10 @@
 ![История запросов](screenshots/06-history.png)
 
 ---
-
 ## 🚀 Быстрый старт
-
-Подробно → [docs/deployment.md](docs/deployment.md)
 
 **Минимальные требования:**
 - VPS: 12 ядер CPU, 32 ГБ RAM, 200 ГБ SSD
-- Ubuntu 24.04 LTS
-- Домен с A-записями
 
 **Этапы развёртывания:**
 1. Настроить статическую сеть на VPS
@@ -129,35 +124,6 @@
 | Загрузка страницы | <500 мс |
 
 **С GPU (RTX 3090):** индексация в 30× быстрее, ответы за 2–5 сек.
-
----
-
-## 📁 Структура проекта
-private-ai-assistant-for-lawyers/
-├── README.md
-├── LICENSE
-├── .gitignore
-├── .env.example
-├── requirements.txt
-├── docker-compose.yml
-├── src/
-│ ├── app.py
-│ ├── auth.py
-│ ├── history.py
-│ ├── ingest.py
-│ ├── ocr.py
-│ └── reranker.py
-├── infra/
-│ ├── nginx-rag.conf
-│ ├── streamlit.service
-│ └── 10-eth0.network
-├── docs/
-│ ├── architecture.md
-│ ├── deployment.md
-│ └── backup-restore.md
-└── screenshots/
-
-text
 
 ---
 
